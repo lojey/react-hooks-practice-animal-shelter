@@ -1,6 +1,11 @@
 import React from "react";
 
-function Pet() {
+function Pet({ pet, onAdoptPet }) {
+  const { name, type, age, weight, gender, isAdopted } = pet;
+
+  function handleAdoptClick() {
+    onAdoptPet(pet.id);
+  }
   return (
     <div className="card" data-testid="pet">
       <div className="content">
